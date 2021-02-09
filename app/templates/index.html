@@ -1,4 +1,51 @@
 {% extends "base.html" %}
+
+{% block navbar %}
+    <a class="nav-item nav-link active" href="/">Home</a>
+    <a class="nav-item nav-link" href="/about">About</a>
+    <a class="nav-item nav-link" href="/product">Product</a>
+    <a class="nav-item nav-link" href="/contact">Contact</a>
+{% endblock %}
+
 {% block content %}
-    <h1>Home Page</h1>
+    <div class="container-fluid index">
+
+        <div class="container">
+            <div class="row gy-5 align-items-center">
+                <div class="col-xs-7 col-md-6 heading">
+                    <h1 class="text-white">Hire a Freelancer</h1>
+                    <p class="text-grey w-55">Get access to local freelancers that will help make sure your task is completed.</p>
+                    <button class="btn btn-outline-grey btn-md text-white">Get Started</button>
+                </div>
+                <div class="col-xs-7 col-md-6 heading">
+                    <div class="row">
+                        <div class="col text-center"><i class="fas fa-broom fa-3x"></i> <br></div>
+                        <div class="col text-center"><i class="fas fa-cannabis fa-3x"></i></div>
+                        <div class="col text-center"><i class="fas fa-boxes fa-3x"></i></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col text-center"><i class="fas fa-cat fa-3x"></i> <br></div>
+                        <div class="col text-center"><i class="fas fa-camera-retro fa-3x"></i></div>
+                        <div class="col text-center"><i class="fas fa-hammer fa-3x"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid content">
+        <div class="container mt-5">
+
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-4">
+                  <img class="img-man-working" src="../static/images/man-1459246_1280.png" alt="man-working">
+                </div>
+                <div class="col col-lg-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatem exercitationem reiciendis doloremque repellendus minima fuga, assumenda porro recusandae ipsam, reprehenderit necessitatibus nihil ducimus. Itaque ipsa odio beatae, tenetur rem id veritatis velit adipisci possimus? Maxime quia sapiente tempora, cumque id sit libero doloribus optio, accusantium eos officia numquam qui?
+                </div>
+              </div>
+
+        </div>
+    </div>
 {% endblock content %}
