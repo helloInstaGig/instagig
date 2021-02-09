@@ -10,7 +10,15 @@
 
 }
 
-body {
+img {
+  max-width: 100%;
+}
+
+.img-man-working {
+  transform: scaleX(-1);
+}
+
+body, content {
   background-color: var(--light-blue);
 }
 
@@ -60,6 +68,7 @@ i {
 .row.align-items-center {
   height: 600px;
 }
+
 
 @media only screen and (max-width: 767px) {
   .col-xs-7.col-md-6.heading {

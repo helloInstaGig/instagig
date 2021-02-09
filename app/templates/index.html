@@ -1,4 +1,12 @@
 {% extends "base.html" %}
+
+{% block navbar %}
+    <a class="nav-item nav-link active" href="/">Home</a>
+    <a class="nav-item nav-link" href="/about">About</a>
+    <a class="nav-item nav-link" href="/product">Product</a>
+    <a class="nav-item nav-link" href="/contact">Contact</a>
+{% endblock %}
+
 {% block content %}
     <div class="container-fluid index">
 
@@ -23,6 +31,21 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
+
+    <div class="container-fluid content">
+        <div class="container mt-5">
+
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-4">
+                  <img class="img-man-working" src="../static/images/man-1459246_1280.png" alt="man-working">
+                </div>
+                <div class="col col-lg-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatem exercitationem reiciendis doloremque repellendus minima fuga, assumenda porro recusandae ipsam, reprehenderit necessitatibus nihil ducimus. Itaque ipsa odio beatae, tenetur rem id veritatis velit adipisci possimus? Maxime quia sapiente tempora, cumque id sit libero doloribus optio, accusantium eos officia numquam qui?
+                </div>
+              </div>
+
+        </div>
     </div>
 {% endblock content %}
