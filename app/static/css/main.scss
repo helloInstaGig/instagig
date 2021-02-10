@@ -1,78 +1,75 @@
 *, *::before, *::after {
-    box-sizing: border-box;
-    --purple: #695E93;
-    --ebony: #281C2D;
-    --violet: #8155BA;
-    --grey: #D3D3D3;
-    --dark-blue: #101736;
-    --light-blue: #9ba7d5;
-  
-  
+  box-sizing: border-box;
+  --purple: #695E93;
+  --ebony: #281C2D;
+  --violet: #8155BA;
+  --grey: #D3D3D3;
+  --dark-blue: #101736;
+  --light-blue: #9ba7d5;
+
+
+}
+
+img {
+  max-width: 100%;
+}
+
+.img-man-working {
+  transform: scaleX(-1);
+}
+
+body, content {
+  background-color: var(--light-blue);
+}
+
+.text-grey {
+  color: var(--grey) !important;
+}
+
+.bg-purple {
+  background-color: var(--purple) !important;
+}
+
+.bg-ebony {
+  background-color: var(--ebony) !important;
+}
+
+.bg-violot {
+  background-color: var(--violet) !important;
+}
+
+.bg-dark-blue {
+  background-color: var(--dark-blue) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue) !important;
+}
+
+.btn-outline-grey {
+  border: var(--grey) 1px solid;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar, .container-fluid.index{
+  background-color: var(--dark-blue) !important;
+}
+
+
+i {
+  color: var(--light-blue);
+}
+
+.row.align-items-center {
+  height: 600px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .col-xs-7.col-md-6.heading {
+    text-align: center;
   }
-  
-  img {
-    max-width: 100%;
-    &:hover {
-        width: 1px;
-    }
-  }
-  
-  .img-man-working {
-    transform: scaleX(-1);
-  }
-  
-  body, content {
-    background-color: var(--light-blue);
-  }
-  
-  .text-grey {
-    color: var(--grey) !important;
-  }
-  
-  .bg-purple {
-    background-color: var(--purple) !important;
-  }
-  
-  .bg-ebony {
-    background-color: var(--ebony) !important;
-  }
-  
-  .bg-violot {
-    background-color: var(--violet) !important;
-  }
-  
-  .bg-dark-blue {
-    background-color: var(--dark-blue) !important;
-  }
-  
-  .bg-light-blue {
-    background-color: var(--light-blue) !important;
-  }
-  
-  .btn-outline-grey {
-    border: var(--grey) 1px solid;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  .navbar, .container-fluid.index{
-    background-color: var(--dark-blue) !important;
-  }
-  
-  
-  i {
-    color: var(--light-blue);
-  }
-  
-  .row.align-items-center {
-    height: 600px;
-  }
-  
-  
-  @media only screen and (max-width: 767px) {
-    .col-xs-7.col-md-6.heading {
-      text-align: center;
-    }
-  }
+}

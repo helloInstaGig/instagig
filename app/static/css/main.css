@@ -13,10 +13,6 @@ img {
   max-width: 100%;
 }
 
-img:hover {
-  width: 1px;
-}
-
 .img-man-working {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
