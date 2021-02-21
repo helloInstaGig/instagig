@@ -19,6 +19,7 @@ img {
 }
 
 body, content {
+  padding-bottom: 3rem;
   background-color: var(--light-blue);
 }
 
@@ -76,4 +77,29 @@ i {
     text-align: center;
   }
 }
+
+/* MARKETING CONTENT
+  -------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-md-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: 400;
+}
+
+/* Featurettes
+  ------------------------- */
+/* Thin out the marketing headings */
+.featurette-heading {
+    margin-top: 5rem;
+    font-weight: 300;
+    line-height: 1;
+}
+.featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
 /*# sourceMappingURL=main.css.map */
