@@ -5,8 +5,8 @@
   --ebony: #281C2D;
   --violet: #8155BA;
   --grey: #D3D3D3;
-  --dark-blue: #101736;
-  --light-blue: #9ba7d5;
+  --dark-blue: #34556e;
+  --light-blue: #fff;
 }
 
 img {
@@ -14,6 +14,7 @@ img {
 }
 
 .img-man-working {
+  box-shadow: -2px 4px 8px 6px #d4d4d4;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
@@ -59,7 +60,7 @@ body {
   background-color: var(--dark-blue) !important;
 }
 
-.btn:hover {
+.btn:hover, .btn a:hover {
   background-color: var(--light-blue);
   color: black !important;
 }
