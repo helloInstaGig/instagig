@@ -22,24 +22,63 @@
     {% endif %}
 </head>
 <body>
-    <header class="site-header">
-      
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel">
-        <div class="container">
-          <a class="navbar-brand" href="/">InstaGig</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav ml-auto">
-              {% block navbar %} {% endblock %}
-            </div>
+  <div class="root">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel">
+      <div class="container">
+        <a class="navbar-brand" href="/">InstaGig</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav ml-auto">
+            {% block navbar %} {% endblock %}
           </div>
         </div>
-      </nav>
-    </header>
-    {% block content %}{% endblock %}
+      </div>
+    </nav>
 
-    <div class="scrollBtn"><i class="fas fa-angle-up"></i></div>
+    <div class="content">
+    {% block content %}{% endblock %}
+    </div>
+
+    <div class="container-fluid footer-container">
+    <footer class="container pt-4  pt-md-5 ">
+      <div class="row">
+        <div class="col-12 col-md">
+          <!-- <img class="mb-2" src="" alt="Logo" width="24" height="19"> -->
+
+          <small class="d-block mb-3 text-white">InstaGig &copy; 2021</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5 class="text-white">Social Links</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-grey" href="#">Twitter</a></li>
+            <li><a class="text-grey" href="#">Instagram</a></li>
+            <li><a class="text-grey" href="#">FaceBook</a></li>
+            <li><a class="text-grey" href="#">Linkedin</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-grey" href="#">Resource</a></li>
+            <li><a class="text-grey" href="#">Resource name</a></li>
+            <li><a class="text-grey" href="#">Another resource</a></li>
+            <li><a class="text-grey" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 class="text-white">About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-grey" href="#">Team</a></li>
+            <li><a class="text-grey" href="#">Locations</a></li>
+            <li><a class="text-grey" href="#">Privacy</a></li>
+            <li><a class="text-grey" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </div>
 </body>
 </html>
