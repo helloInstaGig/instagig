@@ -5,7 +5,7 @@ from datetime import date, datetime
 app = Flask(__name__)
 
 # app.debug = Trupe
-app.config['SQLALCHEMY_DATABASE_URI'] = os.eviron['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
