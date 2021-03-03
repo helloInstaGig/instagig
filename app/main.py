@@ -1,5 +1,38 @@
-from flask import Flask, render_template, url_for
+import os
+from flask import Flask, render_template, url_for, request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import date, datetime
 app = Flask(__name__)
+
+# app.debug = Trupe
+app.config['SQLALCHEMY_DATABASE_URI'] = os.eviron['DATABASE_URL']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+class Jobs(db.Model):
+    __tablename__ = 'jobs'
+    
+    id = db.Column(db.Integer, primary_key = True)
+    created = db.Column(db.Text())
+    modified = db.Column(db.Text())
+    title = db.Column(db.String(50))
+    name = db.Column(db.String(30))
+    price = db.Column(db.Integer)
+    comment = db.Column(db.Text())
+    img = db.Column(db.Text())
+
+
+    def __init__(self, title, name, price, comment, img):
+        now = datetime.now()
+        created = now.strftime("%B %d, %Y, %H:%m %p")
+        print(created)
+        self.created = created
+        self.modified = created
+        self.title = title
+        self.name = name
+        self.price = price
+        self.comment = comment
+        self.img = "https://doggiedesigner.com/wp-content/uploads/2018/04/97.3.jpg"
 
 
 @app.route("/")
@@ -17,4 +50,30 @@ def product():
 @app.route("/contact")
 def contact():
     return render_template('contact.html', title='Contact')
+
+@app.route("/demo")
+def demo():
+    jobs = Jobs.query.filter().all()
+    return render_template('demo.html', jobs=jobs)
+
+@app.route("/submit", methods=['POST'])
+def submit():
+    if request.method == 'POST':
+        # now = datetime.now()
+
+        title = request.form['title']
+        name = request.form['name']
+        comment = request.form['comment']
+        price = request.form['price']
+        img = "https://doggiedesigner.com/wp-content/uploads/2018/04/97.3.jpg"
+        # created = now.strftime("%B %d, %Y, %H:%m %p")
+        # modified = created
+        data = Jobs(title, name, price, comment, img)
+        print(data)
+        db.session.add(data)
+        db.session.commit()
+        jobs = Jobs.query.filter().all()
+
+        return render_template('demo.html', jobs=jobs)
+
 

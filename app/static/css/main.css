@@ -77,6 +77,11 @@ i {
   height: 400px;
 }
 
+/* Jobs listing css */
+.job-img {
+  max-width: 200px;
+  max-height: 200px;
+}
 @media only screen and (max-width: 767px) {
   .col-xs-7.col-md-6.heading {
     text-align: center;
