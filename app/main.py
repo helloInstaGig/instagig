@@ -38,7 +38,6 @@ class Jobs(db.Model):
 
 @app.route("/")
 def home():
-    print(os.environ['poop'])
     return render_template('index.html')
 
 @app.route("/about")
