@@ -68,15 +68,12 @@ def delete():
 @app.route("/submit", methods=['POST'])
 def submit():
     if request.method == 'POST':
-        # now = datetime.now()
 
         title = request.form['title']
         name = request.form['name']
         comment = request.form['comment']
         price = request.form['price']
         img = "https://doggiedesigner.com/wp-content/uploads/2018/04/97.3.jpg"
-        # created = now.strftime("%B %d, %Y, %H:%m %p")
-        # modified = created
         data = Jobs(title, name, price, comment, img)
         print(data)
         db.session.add(data)
