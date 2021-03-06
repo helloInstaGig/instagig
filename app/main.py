@@ -1,10 +1,11 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date, datetime
+load_dotenv()
 app = Flask(__name__)
 
-# app.debug = Trupe
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -37,6 +38,7 @@ class Jobs(db.Model):
 
 @app.route("/")
 def home():
+    print(os.environ['poop'])
     return render_template('index.html')
 
 @app.route("/about")
@@ -55,6 +57,14 @@ def contact():
 def demo():
     jobs = Jobs.query.filter().all()
     return render_template('demo.html', jobs=jobs)
+
+@app.route("/delete", methods=['POST'])
+def delete():
+    if request.method == 'POST':
+        db.drop_all()
+        db.create_all()
+        jobs = Jobs.query.filter().all()
+        return render_template('demo.html', jobs=jobs)
 
 @app.route("/submit", methods=['POST'])
 def submit():
