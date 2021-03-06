@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+    <a class="nav-item nav-link" href="/">Home</a>
+    <a class="nav-item nav-link" href="/about">About</a>
+    <a class="nav-item nav-link" href="/product">Product</a>
+    <a class="nav-item nav-link" href="/contact">Contact</a>
+    <a class="nav-item nav-link active" href="/demo">Demo</a>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+      <div class="alert alert-danger " role="alert">
+        <form action="/delete" method="POST" class="card p-0">
+          <button class="btn btn-md">DELETE</button>
+        </form>
+      </div>
+    <form class="card mt-3 mb-5 p-3" method="POST" action="/submit">
+        <label for="title w-100">Title</label>
+        <input type="text w-100" id="title" name="title" required>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <div class="input-group mt-3 mb-3">
+          <span for="price" class="input-group-text">Price</span>
+          <input type="number" min="0" max="1000" required class="form-control" name="price" aria-label="Dollar amount (with dot and two decimal places)">
+          <span class="input-group-text">$</span>
+        </div>
+        <div class="input-group mb-3 w-100">
+          <label class="w-100" for="comment">Comment</label>
+          <textarea class="w-100" name="comment" id="comment" cols="30" rows="10"></textarea>
+        </div> 
+        <button type="submit" class="btn btn-md btn-primary">Submit</button>
+    </form>
+
+    {% if jobs %}
+    <div class="row gy-0">
+      {% for job in jobs: %}
+      <div class="col-xs-6 col-md-3 mb-3">
+        
+        <div class="card rounded shadow-lg" style="width: 100%;">
+          <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ job.title }}</h5>
+            <p class="card-text">{{ job.comment }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: ${{ job.price }}</li>
+            <li class="list-group-item">Make offer</li>
+            <li class="list-group-item">Freelancer: {{ job.name }}</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Add To Cart</a>
+            <a href="#" class="card-link">View Item</a>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+      {% endif %}
+    </div>
+{% endblock %}
