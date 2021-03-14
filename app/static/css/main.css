@@ -134,9 +134,17 @@ i {
     line-height: 1;
 }
 .featurette-divider {
-    margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 6rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 .team-cards {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* About Page */
+
+@media only screen and (max-width: 1100px) {
+  .about-container .row {
+    height: 390px;
+  }
 }
