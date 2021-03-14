@@ -9,6 +9,10 @@
   --light-blue: #c2d8f1;
 }
 
+h2 {
+  font-weight: 600 !important;
+}
+
 .text-grey {
   color: var(--grey) !important;
 }
@@ -101,12 +105,12 @@ i {
 /*# sourceMappingURL=main.css.map */
 .about-container .row{
   height: 500px;
-  background-image: url("../images/Team.png");
+  background-image: url("../images/Team\ sm.png");
   background-repeat: no-repeat;
   background-size: contain;
 }       
 .welcome-card {
-  width: 240px;
+  width: 241px;
   border-radius: 20px;
 }
 
@@ -131,4 +135,8 @@ i {
 }
 .featurette-divider {
     margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+.team-cards {
+  background-color: rgba(0, 0, 0, 0.1);
 }
