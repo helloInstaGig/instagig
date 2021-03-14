@@ -112,12 +112,12 @@ i {
   ------------------------- */
 /* Thin out the marketing headings */
 .featurette-heading {
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-weight: 300;
     line-height: 1;
 }
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 3rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /*# sourceMappingURL=main.css.map */
