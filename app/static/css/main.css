@@ -126,4 +126,8 @@ i {
   background-image: url("../images/Team.png");
   background-repeat: no-repeat;
   background-size: contain;
+}         
+
+.welcome-card {
+  width: 241px;
 }
