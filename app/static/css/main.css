@@ -121,3 +121,9 @@ i {
 }
 
 /*# sourceMappingURL=main.css.map */
+.about-container .row{
+  height: 500px;
+  background-image: url("../images/Team.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
