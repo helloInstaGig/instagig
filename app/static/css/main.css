@@ -129,5 +129,6 @@ i {
 }         
 
 .welcome-card {
-  width: 241px;
+  width: 240px;
+  border-radius: 20px;
 }
