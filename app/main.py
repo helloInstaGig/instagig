@@ -14,26 +14,21 @@ class Jobs(db.Model):
     __tablename__ = 'jobs'
     
     id = db.Column(db.Integer, primary_key = True)
-    created = db.Column(db.Text())
-    modified = db.Column(db.Text())
     title = db.Column(db.String(50))
     name = db.Column(db.String(30))
     price = db.Column(db.Integer)
     comment = db.Column(db.Text())
-    img = db.Column(db.Text())
+    img = db.Column(db.LargeBinary)
+    mimetype = db.Column(db.Text())
+    timestamp = db.Column(db.TIMESTAMP, nullable=False, server_default=db.func.now(), onupdate=db.func.now())
 
-
-    def __init__(self, title, name, price, comment, img):
-        now = datetime.now()
-        created = now.strftime("%B %d, %Y, %H:%m %p")
-        print(created)
-        self.created = created
-        self.modified = created
+    def __init__(self, title, name, price, comment, img, mimetype):
         self.title = title
         self.name = name
         self.price = price
         self.comment = comment
-        self.img = "https://doggiedesigner.com/wp-content/uploads/2018/04/97.3.jpg"
+        self.img = img
+        self.mimetype = mimetype
 
 
 @app.route("/")
@@ -73,13 +68,17 @@ def submit():
         name = request.form['name']
         comment = request.form['comment']
         price = request.form['price']
-        img = "https://doggiedesigner.com/wp-content/uploads/2018/04/97.3.jpg"
-        data = Jobs(title, name, price, comment, img)
-        print(data)
+        img = request.files['image']
+        mimetype = img.mimetype
+
+        data = Jobs(title, name, price, comment, img.read(), mimetype)
         db.session.add(data)
         db.session.commit()
         jobs = Jobs.query.filter().all()
-
         return render_template('demo.html', jobs=jobs)
 
+@app.route("/listing/<int:id>/thumbnail")
+def thumbnail(id):
+    thumbnail = Jobs.query.filter(Jobs.id == id)[0]
+    return app.response_class(thumbnail.img, mimetype=thumbnail.mimetype)
 
