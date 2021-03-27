@@ -47,6 +47,10 @@ def product():
 def contact():
     return render_template('contact.html', title='Contact')
 
+@app.route("/faq")
+def faq():
+    return render_template('faq.html', title='FAQ')
+
 @app.route("/demo")
 def demo():
     jobs = Jobs.query.filter().all()
