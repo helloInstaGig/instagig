@@ -75,7 +75,7 @@ html,body {
 
 .btn:hover, .btn a:hover {
   background-color: var(--light-blue);
-  color: black !important;
+  color: var(--light-blue) !important;
 }
 
 .col.text-center i {
