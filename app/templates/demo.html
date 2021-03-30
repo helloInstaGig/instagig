@@ -12,11 +12,11 @@
 
 {% block content %}
     <div class="container mt-3">
-      <div class="alert alert-danger " role="alert">
+      <!-- <div class="alert alert-danger " role="alert">
         <form action="/delete" method="POST" class="card p-0">
           <button class="btn btn-md">DELETE</button>
         </form>
-      </div>
+      </div> -->
     <form class="card mt-3 mb-5 p-3" method="POST" action="/submit" enctype="multipart/form-data">
         <label for="title w-100">Titles</label>
         <input type="text w-100" id="title" name="title" required>
@@ -46,10 +46,10 @@
     {% if jobs %}
     <div class="row gy-0">
       {% for job in jobs: %}
-      <div class="col-xs-6 col-md-3 mb-3 card-deck">
+      <div class="col-xs-12 col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
         
-        <div class="card rounded shadow-lg" style="width: 100%;">
-          <img src="/listing/{{ job.id }}/thumbnail" class="card-img-top" alt="...">
+        <div class="card rounded shadow-lg" style="">
+          <img src="/listing/{{ job.id }}/thumbnail" height="225px" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ job.title }}</h5>
             <p class="card-text">{{ job.comment }}</p>
