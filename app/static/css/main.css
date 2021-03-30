@@ -169,3 +169,12 @@ html,body {
   bottom: 0px;
   right: 0px;
 }
+
+.proto-phone2 {
+  z-index: 1;
+  width: 30%;
+  height: 81%;
+  position: absolute;
+  bottom: -5px;
+  left: 25px;
+}
