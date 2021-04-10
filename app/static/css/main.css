@@ -73,10 +73,10 @@ html,body {
   z-index: 1;
 }
 
-.btn:hover, .btn a:hover {
+/* .btn:hover, .btn a:hover {
   background-color: var(--light-blue);
   color: var(--light-blue) !important;
-}
+} */
 
 .col.text-center i {
   color: var(--light-blue);
