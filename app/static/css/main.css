@@ -146,6 +146,13 @@ html,body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.uniq.focus, .uniq:focus {
+  /* outline: 0; */
+  box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%) !important;
+}
+
+
+
 /* About Page */
 
 @media only screen and (max-width: 1100px) {
