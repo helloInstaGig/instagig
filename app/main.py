@@ -56,13 +56,15 @@ def demo():
     jobs = Jobs.query.filter().all()
     return render_template('demo.html', jobs=jobs)
 
-@app.route("/delete", methods=['POST'])
-def delete():
-    if request.method == 'POST':
-        db.drop_all()
-        db.create_all()
-        jobs = Jobs.query.filter().all()
-        return render_template('demo.html', jobs=jobs)
+# @app.route("/delete/<int:index>")
+# def delete(index):
+
+#     posting = Jobs.query.filter_by(id=index)[0]
+#     print(posting)
+#     db.session.delete(posting)
+#     db.session.commit()
+#     jobs = Jobs.query.filter().all()
+#     return render_template('demo.html', jobs=jobs)
 
 @app.route("/submit", methods=['POST'])
 def submit():

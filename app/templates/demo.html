@@ -12,11 +12,6 @@
 
 {% block content %}
     <div class="container mt-3">
-      <!-- <div class="alert alert-danger " role="alert">
-        <form action="/delete" method="POST" class="card p-0">
-          <button class="btn btn-md">DELETE</button>
-        </form>
-      </div> -->
     <form class="card mt-3 mb-5 p-3" method="POST" action="/submit" enctype="multipart/form-data">
         <label for="title w-100">Titles</label>
         <input type="text w-100" id="title" name="title" required>
@@ -32,7 +27,7 @@
             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
           </div>
           <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" aria-describedby="image">
+            <input type="file" class="custom-file-input" name="image" aria-describedby="image" required>
             <label class="custom-file-label" for="image" >Choose thumbnail</label>
           </div>  
         </div>
@@ -60,6 +55,10 @@
             <li class="list-group-item">Freelancer: {{ job.name }}</li>
           </ul>
           <div class="card-body">
+            <form action="/"></form>
+            <a href="/delete/{{ job.id }}" class="card-link">
+              <i class="fas fa-trash"></i>
+            </a>
             <a href="#" class="card-link">I'm Interested</a>
             <a href="#" class="card-link">View Item</a>
           </div>
